@@ -1,0 +1,33 @@
+argo-cd: {}
+
+argocd-apps:
+  projects:
+    argocd: 
+      namespace: argocd
+      sourceRepos:
+      - https://github.com/KSmigielski/truenas-k8s
+      destinations:
+      - namespace: argocd
+        server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+      - group: ""
+        kind: Namespace
+      namespaceResourceWhitelist:
+      - group: ""
+        kind: "argoproj.io/v1alpha1"
+  applications:
+    bootstrap-argocd:
+      namespace: argocd
+      project: argocd
+      source:
+        repoURL: https://github.com/KSmigielski/truenas-k8s
+        targetRevision: HEAD
+        path: bootstrap-argocd
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        automated:
+          selfHeal: true
+
+
