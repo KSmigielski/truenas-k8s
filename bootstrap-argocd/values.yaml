@@ -1,4 +1,9 @@
-argo-cd: {}
+argo-cd:
+  server:
+    service:
+      type: NodePort
+      nodePortHttp: 30080
+      nodePortHttps: 30443
 
 argocd-apps:
   projects:
