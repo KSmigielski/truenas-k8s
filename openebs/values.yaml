@@ -1,0 +1,14 @@
+openebs:
+  localpv-provisioner:
+    localpv: 
+      basePath: "first/ebs-storage"
+  engines:
+    local:
+      lvm: 
+        enabled: false
+      zfs:
+        enabled: false
+    replicated:
+      mayastor:
+        enabled: false
+

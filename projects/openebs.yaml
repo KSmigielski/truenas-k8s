@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: openebs
+  namespace: argocd
+spec:
+  sourceRepos:
+  - https://github.com/KSmigielski/truenas-k8s
+
+  destinations:
+  - namespace: openebs
+    server: https://kubernetes.default.svc
+
+  #  clusterResourceWhitelist:
+  #  - group: ''
+  #    kind: Namespace
+  #
+  # Allow all namespaced-scoped resources to be created, except for ResourceQuota, LimitRange, NetworkPolicy
+  #  namespaceResourceBlacklist:
+  #  - group: ''
+  #    kind: ResourceQuota
+  #  - group: ''
+  #    kind: LimitRange
+  #  - group: ''
+  #    kind: NetworkPolicy
+  #
+  #  # Deny all namespaced-scoped resources from being created, except for Deployment and StatefulSet
+  #  namespaceResourceWhitelist:
+  #  - group: 'apps'
+  #    kind: Deployment
+  #  - group: 'apps'
+  #    kind: StatefulSet
