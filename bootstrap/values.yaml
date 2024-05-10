@@ -9,9 +9,13 @@ argocd-apps:
       destinations:
       - namespace: argocd
         server: https://kubernetes.default.svc
+      clusterResourceWhitelist:
+      - group: '*'
+        kind: "*"
+    
       namespaceResourceWhitelist:
-      - kind: ""
-        group: "argoproj.io/v1alpha1"
+      - group: '*'
+        kind: "*"
   applications:
     projects:
       namespace: argocd
