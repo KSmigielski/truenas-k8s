@@ -1,33 +1,38 @@
-argo-cd:
-  server:
-    service:
-      type: NodePort
-      nodePortHttp: 30080
-      nodePortHttps: 30443
+argo-cd: {}
 
 argocd-apps:
   projects:
-    argocd: 
+    bootstrap: 
       namespace: argocd
       sourceRepos:
       - https://github.com/KSmigielski/truenas-k8s
       destinations:
       - namespace: argocd
         server: https://kubernetes.default.svc
-      clusterResourceWhitelist:
-      - group: ""
-        kind: Namespace
       namespaceResourceWhitelist:
       - group: ""
         kind: "argoproj.io/v1alpha1"
   applications:
-    bootstrap-argocd:
+    projects:
       namespace: argocd
-      project: argocd
+      project: bootstrap
       source:
         repoURL: https://github.com/KSmigielski/truenas-k8s
         targetRevision: HEAD
-        path: bootstrap-argocd
+        path: projects
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: argocd
+      syncPolicy:
+        automated:
+          selfHeal: true
+    apps:
+      namespace: argocd
+      project: bootstrap
+      source:
+        repoURL: https://github.com/KSmigielski/truenas-k8s
+        targetRevision: HEAD
+        path: apps
       destination:
         server: https://kubernetes.default.svc
         namespace: argocd
