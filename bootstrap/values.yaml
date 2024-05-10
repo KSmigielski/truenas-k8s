@@ -10,8 +10,8 @@ argocd-apps:
       - namespace: argocd
         server: https://kubernetes.default.svc
       namespaceResourceWhitelist:
-      - group: ""
-        kind: "argoproj.io/v1alpha1"
+      - kind: ""
+        group: "argoproj.io/v1alpha1"
   applications:
     projects:
       namespace: argocd
