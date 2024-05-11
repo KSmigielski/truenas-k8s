@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prometheus-node-exporter
+  namespace: argocd
+spec:
+  project: prometheus-node-exporter
+
+  source:
+    repoURL: https://github.com/KSmigielski/truenas-k8s
+    targetRevision: HEAD
+    path: prometheus-node-exporter
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: prometheus-node-exporter
+
+  syncPolicy:
+    automated: 
+      prune: true 
+      selfHeal: true 
+      allowEmpty: false 
+    syncOptions:
+    - CreateNamespace=true 
