@@ -10,7 +10,6 @@ spec:
     repoURL: https://github.com/KSmigielski/truenas-k8s
     targetRevision: HEAD
     path: openebs
-    helm:
   destination:
     server: https://kubernetes.default.svc
     namespace: openebs
