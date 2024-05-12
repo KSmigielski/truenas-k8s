@@ -1,0 +1,19 @@
+allowVolumeExpansion: true
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+  name: openebs--zfs-main
+parameters:
+  compression: zstd-6
+  dedup: "off"
+  encryption: "off"
+  fstype: zfs
+  poolname: first/openebs
+  recordsize: 64k
+  shared: "yes"
+  thinprovision: "yes"
+provisioner: zfs.csi.openebs.io
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
