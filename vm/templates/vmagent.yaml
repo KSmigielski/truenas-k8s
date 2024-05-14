@@ -1,7 +1,7 @@
 apiVersion: operator.victoriametrics.com/v1beta1
 kind: VMAgent
 metadata:
-  name: demo
+  name: vm
 spec:
   selectAllByDefault: true
   remoteWrite:
