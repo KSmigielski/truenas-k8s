@@ -2,8 +2,8 @@ apiVersion: grafana.integreatly.org/v1beta1
 kind: Grafana
 metadata:
   name: grafana
-  lables:
-  grafana: grafana
+  labels:
+    grafana: grafana
 spec:
   persistentVolumeClaim:
     spec:
