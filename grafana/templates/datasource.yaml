@@ -1,0 +1,10 @@
+apiVersion: grafana.integreatly.org/v1beta1
+kind: GrafanaDatasource
+metadata:
+  name: vm
+spec:
+  datasource:
+    isDefault: true
+    type: VictoriaMetircs
+    name: VictoriaMetrics
+    url: http://vmselect-vm.vm.svc:8481/select/0/prometheus
