@@ -40,6 +40,7 @@ spec:
   config:
     log:
       mode: "console"
+      level: debug
     auth:
       disable_login_form: "false"
     security:
