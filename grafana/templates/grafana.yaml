@@ -3,7 +3,7 @@ kind: Grafana
 metadata:
   name: grafana
   lables:
-    grafana: "yes"
+  grafana: grafana
 spec:
   persistentVolumeClaim:
     spec:

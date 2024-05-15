@@ -10,4 +10,4 @@ spec:
     url: http://vmselect-vm.vm.svc:8481/select/0/prometheus
   instanceSelector:
     matchLabels:
-      grafana: "yes"
+      grafana: grafana
