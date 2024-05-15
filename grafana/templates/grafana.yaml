@@ -5,6 +5,7 @@ metadata:
   labels:
     grafana: grafana
 spec:
+  allowCrossNamespaceImport: true
   persistentVolumeClaim:
     spec:
       accessModes:
