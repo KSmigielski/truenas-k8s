@@ -8,3 +8,6 @@ spec:
     type: VictoriaMetircs
     name: VictoriaMetrics
     url: http://vmselect-vm.vm.svc:8481/select/0/prometheus
+  instanceSelector:
+    matchLabels:
+      app: grafana
