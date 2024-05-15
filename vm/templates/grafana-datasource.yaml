@@ -3,6 +3,7 @@ kind: GrafanaDatasource
 metadata:
   name: vm
 spec:
+  allowCrossNamespaceImport: true
   datasource:
     access: proxy
     isDefault: true
