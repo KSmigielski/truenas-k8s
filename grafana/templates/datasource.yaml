@@ -6,7 +6,7 @@ spec:
   datasource:
     access: proxy
     isDefault: true
-    type: victoriametircs
+    type: victoriametrics-datasource
     name: VictoriaMetrics
     url: http://vmselect-vm.vm.svc:8481/select/0/prometheus
   instanceSelector:
