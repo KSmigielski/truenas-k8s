@@ -4,6 +4,7 @@ metadata:
   name: vm-2
 spec:
   datasource:
+    access: proxy
     isDefault: true
     type: VictoriaMetircs
     name: VictoriaMetrics
