@@ -518,7 +518,7 @@ pihole:
     ## NOTE: choose port between <30000-32767>
     ##
     nodePorts:
-      dns: "53"
+      dns: "9053"
       http: ""
       ## TODO: support DHCP
       # dhcp: ""
