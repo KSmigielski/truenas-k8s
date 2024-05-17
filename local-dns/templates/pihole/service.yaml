@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: local-dns-pihole-tcp
+  name: local-dns-pihole
 spec:
   type: ClusterIP
   sessionAffinity: None
@@ -15,7 +15,6 @@ spec:
     - name: dns-udp
       port: 53
       protocol: UDP
-      hostPort: 53
   selector:
     name: local-dns-pihole
 
