@@ -3,14 +3,13 @@ kind: Service
 metadata:
   name: local-dns-pihole-tcp
 spec:
-  type: NodePort
+  type: ClusterIP
   sessionAffinity: None
   externalTrafficPolicy: "Cluster"
   ports:
     - name: dns-tcp
       port: 53
       protocol: TCP
-      hostPort: 53
     - name: http
       port: 80
       protocol: TCP
