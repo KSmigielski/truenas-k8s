@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: local-dns-pihole-tcp
+spec:
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: "Cluster"
+  ports:
+    - name: dns-tcp
+      port: 53
+      protocol: TCP
+      hostPort: 53
+    - name: http
+      port: 80
+      protocol: TCP
+    - name: dns-udp
+      port: 53
+      protocol: UDP
+      hostPort: 53
+  selector:
+    name: local-dns-pihole
+
