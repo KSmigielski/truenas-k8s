@@ -16,9 +16,9 @@ spec:
   template:
     metadata:
       name: local-dns-pihole
-    labels:
-      app.kubernetes.io/name: pihole
-      app.kubernetes.io/component: local-dns
+      labels:
+        app.kubernetes.io/name: pihole
+        app.kubernetes.io/component: local-dns
     spec:
       serviceAccountName: local-dns-pihole
       
