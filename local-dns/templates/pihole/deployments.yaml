@@ -92,7 +92,7 @@ spec:
             successThreshold: 1
             timeoutSeconds: 5
             httpGet:
-              path: /admin.index.php
+              path: /admin/login.php
               port: http
           readinessProbe:
             failureThreshold: 5
@@ -101,7 +101,7 @@ spec:
             successThreshold: 1
             timeoutSeconds: 5
             httpGet:
-              path: /admin.index.php
+              path: /admin/login.php
               port: http
           volumeMounts:
             - name: pihole
