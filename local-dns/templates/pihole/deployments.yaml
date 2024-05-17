@@ -2,16 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: local-dns-pihole
+  labels:
+    app.kubernetes.io/name: pihole
+    app.kubernetes.io/component: local-dns
 spec:
   replicas: 1
   strategy:
     type: RollingUpdate
   selector:
     matchLabels:
-      name: local-dns-pihole
+      app.kubernetes.io/name: pihole
+      app.kubernetes.io/component: local-dns
   template:
     metadata:
       name: local-dns-pihole
+    labels:
+      app.kubernetes.io/name: pihole
+      app.kubernetes.io/component: local-dns
     spec:
       serviceAccountName: local-dns-pihole
       

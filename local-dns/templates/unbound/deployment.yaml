@@ -2,16 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: local-dns-unbound
+  labels:
+    app.kubernetes.io/name: unbound
+    app.kubernetes.io/component: local-dns
 spec:
   replicas: 1
   strategy:
     type: RollingUpdate
   selector:
     matchLabels:
-      name: local-dns-unbound
+      app.kubernetes.io/name: unbound
+      app.kubernetes.io/component: local-dns
   template:
     metadata:
       name: local-dns-unbound
+    labels:
+      app.kubernetes.io/name: unbound
+      app.kubernetes.io/component: local-dns
     spec:
       serviceAccountName: local-dns-unbound
       
