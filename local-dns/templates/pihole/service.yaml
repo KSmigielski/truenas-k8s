@@ -15,5 +15,5 @@ spec:
       port: 53
       protocol: UDP
   selector:
-    name: local-dns-pihole
-
+    app.kubernetes.io/name: pihole
+    app.kubernetes.io/component: local-dns
