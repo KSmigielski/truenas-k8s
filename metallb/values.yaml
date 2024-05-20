@@ -16,43 +16,8 @@ metallb:
     create: true
   
   prometheus:
-    # scrape annotations specifies whether to add Prometheus metric
-    # auto-collection annotations to pods. See
-    # https://github.com/prometheus/prometheus/blob/release-2.1/documentation/examples/prometheus-kubernetes.yml
-    # for a corresponding Prometheus configuration. Alternatively, you
-    # may want to use the Prometheus Operator
-    # (https://github.com/coreos/prometheus-operator) for more powerful
-    # monitoring configuration. If you use the Prometheus operator, this
-    # can be left at false.
-    scrapeAnnotations: false
-  
     # port both controller and speaker will listen on for metrics
     metricsPort: 7472
-  
-    # if set, enables rbac proxy on the controller and speaker to expose
-    # the metrics via tls.
-    # secureMetricsPort: 9120
-  
-    # the name of the secret to be mounted in the speaker pod
-    # to expose the metrics securely. If not present, a self signed
-    # certificate to be used.
-    speakerMetricsTLSSecret: ""
-  
-    # the name of the secret to be mounted in the controller pod
-    # to expose the metrics securely. If not present, a self signed
-    # certificate to be used.
-    controllerMetricsTLSSecret: ""
-  
-    # prometheus doens't have the permission to scrape all namespaces so we give it permission to scrape metallb's one
-    rbacPrometheus: false
-  
-    # the service account used by prometheus
-    # required when " .Values.prometheus.rbacPrometheus == true " and " .Values.prometheus.podMonitor.enabled=true or prometheus.serviceMonitor.enabled=true "
-    serviceAccount: ""
-  
-    # the namespace where prometheus is deployed
-    # required when " .Values.prometheus.rbacPrometheus == true " and " .Values.prometheus.podMonitor.enabled=true or prometheus.serviceMonitor.enabled=true "
-    namespace: ""
   
     # the image to be used for the kuberbacproxy container
     rbacProxy:

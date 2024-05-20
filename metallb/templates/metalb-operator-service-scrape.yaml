@@ -1,0 +1,14 @@
+apiVersion: operator.victoriametrics.com/v1beta1
+kind: VMPodScrape
+metadata:
+  name: metallb 
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: vm
+      app.kubernetes.io/name: victoria-metrics-operator
+  endpoints:
+    - port: monitoring
+  namespaceSelector:
+    matchNames:
+      - metallb
