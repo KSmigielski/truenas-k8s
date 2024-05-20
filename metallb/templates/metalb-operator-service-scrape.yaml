@@ -5,7 +5,6 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app.kubernetes.io/component: controller
       app.kubernetes.io/instance: metallb
   endpoints:
     - port: monitoring
