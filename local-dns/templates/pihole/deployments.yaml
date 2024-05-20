@@ -24,7 +24,7 @@ spec:
       
       containers:
         - name: pihole
-          image: docker.io/pihole/pihole:2023.05.0
+          image: docker.io/pihole/pihole:2024.05.0
           imagePullPolicy: IfNotPresent
           env:
             - name: TZ
