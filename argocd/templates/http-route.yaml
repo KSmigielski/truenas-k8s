@@ -9,5 +9,5 @@ spec:
   - "argocd.homelab.local"
   rules:
   - backendRefs:
-    - name: example-svc
+    - name: bootstrap-argocd-server
       port: 8080
