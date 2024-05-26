@@ -4,4 +4,4 @@ metadata:
   name: pihole
 data:
   local.rules.dnsmasq: |
-    address=/homelab.local/192.168.50.42
+    address=/homelab.local/192.168.50.202
