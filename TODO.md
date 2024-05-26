@@ -8,3 +8,5 @@
 - setup buckups
 - setup ingress
 - increase pod count of pihole to 2
+- mterics from truenas
+- fix argo project permissions
