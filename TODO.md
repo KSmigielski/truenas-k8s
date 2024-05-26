@@ -1,0 +1,10 @@
+- metrics from metallb
+- metrics from pihole
+- setup logs collection
+- refactor bootstrap
+- setup secrets vault+something
+- setup bitwarden
+- setup nextcloud
+- setup buckups
+- setup ingress
+- increase pod count of pihole to 2
